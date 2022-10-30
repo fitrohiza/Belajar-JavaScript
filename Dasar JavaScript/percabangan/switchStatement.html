@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Statement</title>
+</head>
+<body>
+    <script>
+
+        const nilai = "A";
+
+        switch(nilai){
+            case "A":
+                document.writeln("<p>Wow Anda Lulus Dengan Baik</p>");
+                break; // untuk mengakhiri program jika benar maka kode selanjutnya tidak akan dieksekusi
+            case "B":
+            case "C":
+                document.writeln("<p>Wow Anda Lulus</p>"); //jika case = B maka baris ini akan dieksekusi
+                break;
+            case "D":
+                document.writeln("<p>Anda Tidak Lulus</p>");
+                break;
+            default :
+                //jika semua tidak terpenuhi maka kode ini akan dieksekusi
+                document.writeln("<p>Mungkin Anda Salah Jurusan</p>"); 
+        }
+        
+    </script>
+</body>
+</html>

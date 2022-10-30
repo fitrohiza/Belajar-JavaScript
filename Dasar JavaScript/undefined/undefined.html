@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undefined</title>
+</head>
+<body>
+    <script>
+
+        //undefined adalah kata kunci pada JS yang nilainya belum didefinisikan
+
+        let name;
+        if(name === undefined){
+            console.info("UNDEFINED"); //true
+        }else{
+            console.info("DEFINED");
+        }
+
+        //undefined pada tipe data array
+        const names = ["Fitroh", "Izatul", "malkiyah"];
+        if(names[2] === undefined){
+            console.info("ARRAY UNDEFINED"); //false karna index ke 2 memiliki nilai
+        }else{
+            console.info("ARRAY DEFINED");
+        }
+
+        //undefined pada data objek
+        const person = {};
+        if(person.name === undefined){
+            console.info("OBJEK UNDEFINED"); //true karna tidak memiliki nilai
+        }else{
+            console.info("OBJEK DEFINED");
+        }
+    </script>
+</body>
+</html>

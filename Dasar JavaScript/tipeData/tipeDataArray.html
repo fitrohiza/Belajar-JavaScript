@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membuat Array</title>
+</head>
+<body>
+    <script>
+        let arrayKosong = [];
+
+        let arrayBerisi = ["Belajar", "JavaScript", "Dasar", 2022];
+
+        const name = [];
+        //menambah isi array
+        name.push("Fitroh");
+        name.push("Izatul", "Malkiyah");
+
+        //menampilkan array dalam bentuk tabel
+        console.table(name);
+
+        //mengakses array pada index tertentu
+        console.info (name[0]);
+        console.info (name[2]);
+
+        //mengubah isi data array
+        name[0] = "Belajar";
+        name[1] = "JavaScript";
+        name[2] = "Dasar";
+
+        console.table(name);
+
+        //menghapus data pada index tapi indexnya tidak hilang
+        delete name[1];
+        console.table(name);
+
+        //mengubah index yang telah dihapus
+        name[1] = "JavaScript Ubah"
+        console.table(name);
+
+        //menambah array di dalam array (2 dimensi)
+        name.push (["ini", "adalah", "array"]);
+        console.table(name);
+
+    </script>
+</body>
+</html>
