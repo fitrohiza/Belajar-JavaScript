@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body>
+    <script>
+        function createAdder(value) {
+            const owner = "Fitroh"; // bundel variabel di keluarkan
+
+            function add(param) {
+                console.info(owner); //diamnil dari variabel local scope di createAdder
+                return value + param;
+            }
+
+            return add; //function add dikeluar dari scope yang semestinya
+        }
+
+        const addTwo = createAdder(2);
+        // function addTwo (param){
+        //     console.info("Fitroh");
+        //     return 2 + param;
+        // }
+        console.info(addTwo(10)); //harusnya bernilai 12
+        console.info(addTwo(20)); //harusnya bernilai 22
+
+        const addTen = createAdder(10);
+        // function addTwo (param){
+        //     console.info("Fitroh");
+        //     return 10 + param;
+        // }
+        console.info(addTen(10)); //harusnya bernilai 20
+        console.info(addTen(20)); //harusnya bernilai 30
+    </script>
+</body>
+
+</html>

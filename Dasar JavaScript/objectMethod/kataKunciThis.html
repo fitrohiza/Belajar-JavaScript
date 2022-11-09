@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Kunci This</title>
+</head>
+
+<body>
+    <script>
+        console.info(this); // akan menghasilkan window karna di akses di global scope
+
+        function sample() {
+            console.info(this); // akan menghasilkan window karna di akses di function
+            function inner() {
+                console.info(this); // window
+            }
+            inner();
+        }
+
+        sample();
+
+
+        const person = {
+            name: "Fitroh",
+            sayHello: function (value) {
+                console.info(`Hello ${value} My Name Is ${this.name}`);
+                //this akan merujuk ke person dan mengambil nilai dari atribut name karena pemanggila di object method 
+            }
+        };
+
+        person.sayHello("Other");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masalah Variabel Var</title>
+</head>
+
+<body>
+    <script>
+        //global scope
+        let i = 20;
+
+        for (let i = 0; i < 10; i++) {
+            //local scope
+            console.info(`local ${i}`); // iterasi 1- 9
+        }
+
+        console.info(`Global ${i}`); // akses variabel i di global scop = 20
+
+        //global scope
+        var j = 20;
+
+        for (var j = 0; j < 10; j++) {
+            //local scope
+            console.info(`local ${j}`); // iterasi 1- 9
+        }
+
+        console.info(`Global ${j}`); // akses variabel i di global scop = 10, seharusnya 20
+    </script>
+</body>
+
+</html>

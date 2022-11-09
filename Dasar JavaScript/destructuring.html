@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+
+<body>
+    <script>
+        {
+            const names = ["Fitroh", "Izatul", "Malkiyah", "Joko", "Morro"];
+
+            //pemanggilan dengan destructuring array
+            const [firstName, midleName, lastName, ...others] = names;
+
+            console.info(firstName);
+            console.info(midleName);
+            console.info(lastName);
+            console.info(others);
+        }
+
+        //DESTRUCTURING FUNCTION OBJEK
+        {
+            const person = {
+                firstName: "Fitroh",
+                lastName: "Malkiyah",
+                address: {
+                    street: "jalan-jalan",
+                    city: "Purwokerto",
+                    country: "Indonesia"
+                },
+                hobby: "Tidur",
+                channel: "Wifi Creative"
+            };
+
+            let {firstName, lastName, address: { street, city, country}, ...others} = person;
+            console.info(firstName);
+            console.info(lastName);
+            console.info(street);
+            console.info(city);
+            console.info(others);
+        }
+
+        //DESTRUCTURING FUNCTION PARAMETER
+        {
+            function displayPerson({firstName, midleName, lastName}){
+                console.info(firstName);
+                console.info(midleName);
+                console.info(lastName);
+            }
+        
+
+        const person = {
+            firstName:"Fitroh",
+            midleName:"Izatul",
+            lastName:"Malkiyah"
+        };
+
+        displayPerson(person);
+        }
+
+        //DESTRUCTURING FUNCTION PARAMETER
+        {
+            function sum([first, second]){
+                return first + second;
+            }
+
+            console.info(sum([1,1]));
+            console.info(sum([10,10]));
+        }
+
+        //DESTRUCTURING DEFAULT VALUE
+        {
+            const names = ["Fitroh", "Izatul"];
+            const [firstName, midleName, lastName = "Malkiyah"] = names;
+
+            console.info(firstName);
+            console.info(midleName);
+            console.info(lastName);
+        }
+
+        //PENGGUNAAN NAMA LAIN YANG TIDAK SAMA DENGAN NAMA PROPERTI OBJEK
+        {
+            const person = {
+                firstName:"Joko",
+                midleName:"Izatul",
+                lastName:"Moro"
+            };
+
+            let {firstName: namaDepan, midleName: namaTengah ="Fitroh", lastName: namaBelakang} = person;
+
+            console.info(namaDepan);
+            console.info(namaTengah);
+            console.info(namaBelakang);
+        }
+    </script>
+</body>
+
+</html>

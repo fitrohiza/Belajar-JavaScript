@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+
+<body>
+    <script>
+        //global scope dapat diakses di manapun
+        let counter = 0;
+
+        //global scope
+        function hitMe() {
+            //local scope hitMe
+            counter++;
+        }
+
+        //global scope
+        function othe() {
+            //local scope hitMe
+        }
+
+        hitMe();
+        hitMe();
+
+        console.info(counter);
+
+        function first() {
+            //local scope first
+            let firstVar = "First";
+
+            function firstNested() {
+                console.info(firstVar);
+                const firstNesterVar = "First Nested";
+            }
+            firstNested();
+            //console.info(firstNestedVar); // ERROR
+        }
+
+        function second() {
+            //local scope second
+            let secondVar = "second";
+            //console.info(firstVar); // error
+        }
+
+        //akses global scope
+        first();
+        second();
+
+        //akses local scope
+        //console.info(firstVar); //error
+        //console.info(secondVar); //error
+    </script>
+</body>
+
+</html>
