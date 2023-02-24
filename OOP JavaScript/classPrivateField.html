@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class : private field</title>
+</head>
+<body>
+    <script>
+        class Counter{ //public class
+            #counter = 0; //private field
+
+            increment(){//method untuk menambah/mengubah private field
+                this.#counter++;
+            }
+            decrement(){//method untuk mengurangi/mengubah private field
+                this.#counter--;
+            }
+            get(){//getter
+                return this.#counter;
+            }
+        }
+
+        const counter = new Counter(); //objek
+
+        counter.increment();//menaikan 1
+        counter.increment();//menaikan 2
+        counter.increment();//menaikan 3
+        counter.increment();//menaikan 4
+        counter.increment();//menaikan 5
+
+        console.info(counter.get());//menampilkan nilai 5
+
+        counter.counter = 100; //mengubah counter menjadi 100 namun nilai asli counter akan tetap bernilai 5
+        // counter.#counter = 100; error karena #counter bersifat private
+
+        console.info(counter);//menampilkan nilai asli counter
+
+    </script>
+</body>
+</html>

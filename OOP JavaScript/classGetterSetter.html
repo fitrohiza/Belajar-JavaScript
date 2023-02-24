@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class : Getter dan Setter</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(firstName, lastName){
+                //properti
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            get fullName(){ //mengambil data dari firstName dan lastName
+                return `${this.firstName} ${this.lastName}`;
+            }
+
+            set fullName(value){
+                const result = value.split(" "); //memisahkan dengan tanda spasi
+                this.firstName = result[0]; //memanggil firstname
+                this.lastName = result[1];
+            }
+        }
+
+        const fit = new Person("Fitroh", "Malkiyah");
+        console.info(fit);
+        console.info(fit.fullName);
+
+        fit.fullName = "Wahyu Widodo";
+        console.info(fit);
+    </script>
+</body>
+</html>

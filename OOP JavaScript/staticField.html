@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Field</title>
+</head>
+<body>
+    <script>
+        class Configuration{
+            //membuat static field dimana bisa diakses dimanapun tanpa membuat sebuah objek
+            static name = "Belajar Javacript OOP";
+            static version = 1.0;
+            static autor = "fitroh"
+        }
+
+        //standart pemanggilan sebuah fiel menggunakan objek
+        const config = new Configuration();
+        console.info(config); //tidak menampilkan apapun karena field pada Configuration sudah menjadi public bukan lagi milik object
+        console.info(config.name); //menampilkan undefine
+
+        //mengubah nilai dari static field
+        Configuration.autor="Fitroh Izatul";
+
+        //cara mengakses static field
+        console.info(Configuration.name); 
+        console.info(Configuration.version);
+        console.info(Configuration.autor);
+    </script>
+</body>
+</html>

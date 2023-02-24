@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <script>
+        //huruf besar pada constractor function diawali menggunakan huruf besar
+        function Person(firstName, lastName) {
+            //deklarasi atribut dimana setiap object yang dibuat pada class person akan memiliki atribut yang sama
+            this.firstName = firstName;
+            this.lastName = lastName;
+            //membuat method yg nantinya setiap object yang dibuat akan memiliki method sayHello
+            this.sayHello = function (name) {
+                console.info(`Hello ${name}, my name is ${this.firstName}`);
+            }
+        }
+
+        //cara membuat object menggunakan kata kunci new
+        const fitroh = new Person("Fitroh", "Malkiyah");
+        fitroh.sayHello("joko");
+
+
+        const joko = new Person("Joko", "Morro");
+        joko.sayHello("fitroh");
+
+        console.log(fitroh);
+        console.log(joko);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class : private Method</title>
+</head>
+<body>
+    <script>
+        class Person { //class public
+
+            say(name){ //method say parameter name
+                if (name){ //kondisi jika benar
+                    this.#sayWithName(name);
+                }else{
+                    this.#sayWithoutName();
+                }
+            }
+
+            #sayWithoutName(){ //private method hanya bisa diakses didalam kelasnya
+                console.info("Hello");
+            }
+            #sayWithName(name){
+                console.info(`Hello ${name}`)
+            }
+        }
+
+        const fit = new Person(); //membuat objek baru
+        fit.say("Dodo");
+
+        //fit.#sayWithName(); error karena method tidak bisa diakses diluar kelas
+    </script>
+</body>
+</html>

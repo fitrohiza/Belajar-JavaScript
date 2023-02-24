@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error handling</title>
+</head>
+<body>
+    <script>
+
+        class ValidationError extends Error{
+            constructor (message, field){
+                super(message);
+                this.field = field;
+            }
+        }
+
+        class MathUtil{ //public class
+            static sum (...numbers){ //static method
+
+                if (numbers.length===0){
+                    throw new ValidationError ("Total Parameter harus lebih dari 0", "numbers"); //membuat pesan error
+                }
+
+                let total = 0; //variabel
+                for(const number of numbers){//perulangan for of
+                    total += number;
+                }
+                return total;
+            }
+        }
+
+        
+        try{
+            console.info(MathUtil.sum()); //memanggil sum tanpa parameter (harusnya error namun karena ditangani oleh try catch hanya muncul pesan saja)
+            console.info("hai");
+        }catch(error){ //catch dijalankan ketika kode pata try mengalami error
+            if (error instanceof ValidationError){
+                console.info (`terjadi error di field ${error.field} dengan error ${error.message}`)
+            }else{
+                console.info(`Terjadi Error : ${error.message}`);
+            }
+        }finally{ //kode akan dijalankan entah try catch mengalami error ataupun tidak
+            console.info("program selesai");
+        }
+
+        
+    </script>
+</body>
+</html>
