@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+</head>
+<body>
+    <script>
+        const input = "12345";
+        const number = Number(input); //konversi ke bentuk number
+
+        console.info(typeof input); //string
+        console.info(typeof number); //number
+        console.info(number); //menampilkan angka yang dikonversi (12345)
+
+        console.info(Number("bukan string")); //Menampilkan NaN
+
+        //static Properties
+        console.info(Number.MIN_VALUE);
+        console.info(Number.MAX_VALUE);
+        console.info(Number.MIN_SAFE_INTEGER);
+        console.info(Number.MAX_SAFE_INTEGER);
+
+        //static Method
+        const data = Number("12345");
+        console.info(Number.isInteger(data)); //true (mengecek apakah data bertipe integer)
+        console.info(Number.isNaN(data)); //false (mengecek apakah data bertipe NaN)
+
+        //Number Instance Method
+        const value = Number("12345")
+        console.info(value.toString(2)) //dikonversi kebentuk biner
+        console.info(value.toLocaleString("id-ID")) //dikonversi kebentuk number menurut standar indonesia
+        console.info(value.toLocaleString("en-US")) //dikonversi kebentuk number menurut standar Amerika
+
+    </script>
+</body>
+</html>

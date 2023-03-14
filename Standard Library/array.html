@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+
+        {
+            //array loop
+            const array = ["Fitroh", "Izatul", "malkiyah"];
+
+            //forEach dengan anonymouse function
+            array.forEach(function (value, index){
+                console.info(`${index} : ${value}`);
+            });
+
+            //forEach dengan arrow function
+            array.forEach((value, index) => console.info (`${index} : ${value}`));
+
+            //forEach tanpa menampilkan index
+            array.forEach((value => console.info(value)))
+        }
+
+        {
+            //array queue
+            console.info("\nArray queue\n")
+            const queue = [];
+
+            queue.push("Fitroh"); //menambah antrian fitroh
+            queue.push("Izatul"); //menambah antrian izatul
+            queue.push("Malkiyah"); //menambah antrian malkiyah
+            console.info(queue) //menampilkan seluruh antrian
+
+            console.info(queue.shift()); //menghapus antrian pertama (fitroh)
+            console.info(queue) //menampilkan antrian setelah antrian pertama dihapus
+            console.info(queue.shift());
+            console.info(queue)
+            console.info(queue.shift());
+            console.info(queue)
+            console.info(queue.shift()); //menampilkan undefined karena tidak ada data yang dihapus
+
+        }
+
+        {
+            //array stack
+            console.info("\nArray stack\n")
+            const stack = [];
+
+            stack.push("Fitroh"); //menambah tumpukan fitroh
+            stack.push("Izatul"); //menambah tumpukan izatul
+            stack.push("Malkiyah"); //menambah tumpukan malkiyah
+            console.info(stack) //menampilkan seluruh tumpukan
+
+            console.info(stack.pop()); //menghapus tumpukan terakhir (malkiyah)
+            console.info(stack) //menampilkan tumpukan setelah tumpukan terakhir dihapus
+            console.info(stack.pop());
+            console.info(stack)
+            console.info(stack.pop());
+            console.info(stack)
+            console.info(stack.pop()); //menampilkan undefined karena tidak ada data yang dihapus
+
+        }
+
+        {
+            //Array Search
+            console.info("\nArray Search\n")
+            const source = [1,2,3,4,5,1,2,3,4,5];
+
+            console.info(source.find(value => value > 3)); //4 karena menampilkan angka pertama yg ditemukan yg lebih besar dari 3
+            console.info(source.findIndex(value => value > 3)); //3 karena 4 berada pada index ke 3
+            console.info(source.includes(7)); // false karena 7 tidak ditemukan
+            console.info(source.indexOf(5)); //4 karena 5 ada di index ke 4
+            console.info(source.lastIndexOf(5)); //9 karena 5 yg diikat adalah 5 pada posisi index terakhir
+
+
+        }
+
+        {
+            //Array Filter
+            console.info("\nArray Filter\n")
+            const numbers = [1,2,3,4,5,6,7,8,9,10];
+            const ganjil = numbers.filter(value => value % 2 === 1);
+            const genap = numbers.filter(value => value % 2 === 0);
+
+            console.info (ganjil);
+            console.info (genap);
+            console.info (numbers);
+
+        }
+
+        {
+            //Array Transform
+            console.info("\nArray Transform\n")
+            const names = ["Fitroh", "Izatul", "Malkiyah"];
+
+            const nameUpper = names.map(value => value.toUpperCase());
+            console.info (nameUpper);
+
+            const nameReduce = names.reduce((before, value) => before + " " + value); 
+            // fitroh masuk ke before izatul ke value kemudian dicombain dengan " " before sudah bernilai fitroh izatul maka value diikat ke malkiyah
+            console.info (nameReduce);
+
+            const nameRight = names.reduceRight((before, value) => before + " " + value); 
+            //kebalikan reduce ia akan menampilkan dari array paling kanan/ terakhir
+            console.info (nameRight);
+
+            const numbers = [1,2,3,4,5,6,7,8,9,10];
+            const total = numbers.reduce((before, value) => before + value);
+            //mendaptkan jumlah dari numbers
+            console.info (total)
+        }
+    </script>
+</body>
+</html>
