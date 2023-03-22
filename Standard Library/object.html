@@ -9,20 +9,51 @@
 <body>
     <script>
 
-        const person = {
+        {
+            const person = {
             firstName : "Fitroh",
             lastName : "Malkiyah"
+            }
+
+            // Object.freeze(person)
+            Object.seal(person)
+
+            person.firstName = "Budi";
+            person.midleName = "Izatul"
+            delete person.lastName
+
+            console.info(person)
         }
 
-        // Object.freeze(person)
-        Object.seal(person)
+        {
+            //Object Assign
 
-        person.firstName = "Budi";
-        person.midleName = "Izatul"
-        delete person.lastName
+            const target = {
+                firstName:"Fitroh"
+            }
 
-        console.info(person)
+            const source = {
+                lastName:"Malkiyah"
+            }
+
+            Object.assign(target, source);
+            console.info(target);
+            console.log(source);
+        }
+
+        {
+            //object property name & value
+
+            const person = {
+                firstName: "Fitroh",
+                lastName: "Malkiyah"
+            }
+
+            console.info(Object.values(person));
+            console.info(Object.getOwnPropertyNames(person))
+        }
         
+        //object assign
     </script>
 </body>
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+  </head>
+  <body>
+    <script>
+      {
+        //create date
+
+        const date1 = new Date();
+        console.info(date1);
+
+        const date2 = new Date(2001, 11, 15);
+        console.info(date2);
+
+        const date3 = new Date(2020, 10, 10, 14, 15, 8, 12);
+        console.info(date3);
+
+        const date4 = new Date(123244202579274);
+        console.info(date4);
+      }
+
+      {
+        //Epoch dan Unix timestamp
+
+        const date1 = new Date();
+        console.info(date1.getTime());
+
+        const date2 = new Date(2001, 11, 15);
+        console.info(date2.getTime());
+
+        const date3 = new Date(2020, 10, 10, 14, 15, 8, 12);
+        console.info(date3.getTime());
+
+        const date4 = new Date(123244202579274);
+        console.info(date4.getTime());
+
+        console.info(Date.now());
+      }
+
+      {
+        //Date parsing
+
+        const time = Date.parse("2020-10-10T08:45:45.123+07:00");
+        console.info(time);
+
+        const date = new Date(time);
+        console.info(date);
+      }
+    </script>
+  </body>
+</html>
